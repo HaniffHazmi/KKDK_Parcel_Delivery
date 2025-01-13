@@ -6,10 +6,17 @@
     <VerticalStackLayout>
         <!-- Welcome Message -->
         <Label Text="Welcome, Admin!" FontSize="24" HorizontalOptions="Center" />
-        
-      
+
+        <Button Text="Parcel List" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                Clicked="OnParcelListClicked"/>
 
         <!-- Logout Button -->
-        <Button Text="Logout" Clicked="OnLogoutClicked"/>
+        <Button 
+            Text="Logout" 
+            Clicked="OnLogoutClicked"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>

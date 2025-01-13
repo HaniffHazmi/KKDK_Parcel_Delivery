@@ -5,7 +5,9 @@
              Title="ParcelListPage">
     <VerticalStackLayout Padding="20">
         <!-- Parcel List -->
-        <ListView x:Name="ParcelListView" ItemTapped="OnParcelTapped">
+        <ListView 
+            x:Name="ParcelListView" 
+            ItemTapped="OnParcelTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding TrackingNumber}" Detail="{Binding Courier}" />

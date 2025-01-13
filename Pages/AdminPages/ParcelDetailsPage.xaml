@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KKDK_Parcel_Delivery.Pages.AdminPages.ParcelDetailsPage"
+             Title="ParcelDetailsPage">
+    <VerticalStackLayout Padding="10">
+        <Label Text="Parcel Details" FontSize="Large" FontAttributes="Bold" />
+
+        <Label Text="Tracking Number:" FontSize="Medium" />
+        <Label Text="{Binding Parcel.TrackingNumber}" FontSize="Medium" />
+
+        <Label Text="Courier:" FontSize="Medium" />
+        <Label Text="{Binding Parcel.Courier}" FontSize="Medium" />
+
+        <Label Text="Receiver:" FontSize="Medium" />
+        <Label Text="{Binding Parcel.ReceiverName}" FontSize="Medium" />
+
+        <Label Text="Status:" FontSize="Medium" />
+        
+        <!-- Picker is enabled only in edit mode -->
+        <Picker x:Name="StatusPicker" 
+                Title="Select Status" 
+                ItemsSource="{Binding ParcelStatusList}" 
+                SelectedItem="{Binding Parcel.ParcelStatus}"
+                IsEnabled="{Binding IsEditing}" />
+
+        <Button Text="Edit"
+                IsVisible="{Binding IsEditing, Converter={StaticResource InverseBoolConverter}}"
+                Command="{Binding EditCommand}" />
+
+        <Button Text="Save"
+                IsVisible="{Binding IsEditing}"
+                Command="{Binding SaveCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -86,7 +86,13 @@ namespace KKDK_Parcel_Delivery.Services
         // Update a Parcel's status
         public async Task<int> UpdateParcelStatusAsync(Parcel parcel)
         {
-            return await _database.UpdateAsync(parcel);
+            var existingParcel = await _database.Table<Parcel>().FirstOrDefaultAsync(p => p.TrackingNumber == parcel.TrackingNumber);
+            if (existingParcel != null)
+            {
+                existingParcel.ParcelStatus = parcel.ParcelStatus;
+                return await _database.UpdateAsync(existingParcel);  // Update the parcel in the database
+            }
+            return 0;  // No rows updated
         }
 
         // Delete a Student
@@ -107,8 +113,11 @@ namespace KKDK_Parcel_Delivery.Services
             return await _database.Table<Parcel>().Where(p => p.ParcelId == parcelId).FirstOrDefaultAsync();
         }
 
-        
+        public async Task<List<Parcel>> GetAllParcelsAsync()
+        {
+            return await _database.Table<Parcel>().ToListAsync();
+        }
 
-
+       
     }
 }
