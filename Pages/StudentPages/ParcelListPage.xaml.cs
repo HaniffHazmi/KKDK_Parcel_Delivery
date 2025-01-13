@@ -1,6 +1,7 @@
 using KKDK_Parcel_Delivery.Models;
 using KKDK_Parcel_Delivery.Services;
-using System.Linq;
+using System;
+using Microsoft.Maui.Storage; // Use MAUI storage for preferences
 
 namespace KKDK_Parcel_Delivery.Pages.StudentPages
 {
@@ -19,8 +20,19 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
         {
             base.OnAppearing();
 
-            // Get the current logged-in student (you can replace this with actual authentication logic)
-            var student = await _databaseService.GetStudentByMatricNumAsync("student_matric_number"); // Replace with the logged-in student matric number
+            // Retrieve the logged-in student's matric number from Preferences
+            string matricNumber = Preferences.Get("StudentMatricNumber", string.Empty);
+
+            if (string.IsNullOrEmpty(matricNumber))
+            {
+                // No student logged in, prompt to log in again
+                await DisplayAlert("Error", "Student not logged in", "OK");
+                await Navigation.PushAsync(new LoginPage()); // Navigate to the login page
+                return;
+            }
+
+            // Fetch student details from the database
+            var student = await _databaseService.GetStudentByMatricNumAsync(matricNumber);
 
             if (student != null)
             {
@@ -30,14 +42,36 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
             }
             else
             {
+                // Handle case where student is not found in the database
                 await DisplayAlert("Error", "Student not found", "OK");
+                await Navigation.PushAsync(new LoginPage()); // Redirect to login if student not found
             }
         }
+
 
         // Navigate to AddParcelPage when the button is clicked
         private async void OnAddParcelClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddParcelPage());
+            // Retrieve the logged-in student's matric number from Preferences
+            string matricNumber = Preferences.Get("StudentMatricNumber", string.Empty); // Adjust based on how you store the matric number
+
+            if (string.IsNullOrEmpty(matricNumber))
+            {
+                await DisplayAlert("Error", "Student not logged in", "OK");
+                return;
+            }
+
+            var student = await _databaseService.GetStudentByMatricNumAsync(matricNumber);
+
+            if (student != null)
+            {
+                // Pass the student's matric number to AddParcelPage
+                await Navigation.PushAsync(new AddParcelPage(student.MatricNum));
+            }
+            else
+            {
+                await DisplayAlert("Error", "Student not found. Please try again.", "OK");
+            }
         }
 
         // Handle parcel item tap
@@ -51,6 +85,5 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
                 await Navigation.PushAsync(new ParcelDetailPage(parcel.ParcelId));  // Pass ParcelId or any other relevant data
             }
         }
-
     }
 }

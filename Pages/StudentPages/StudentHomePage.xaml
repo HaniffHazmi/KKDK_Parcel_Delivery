@@ -13,5 +13,11 @@
             VerticalOptions="Center"
             HorizontalOptions="Center"
             Clicked="Button_Clicked"/>
+
+        <Button
+            Text="Go to Parcel List"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Clicked="OnParcelListClicked"/>
     </VerticalStackLayout>
 </ContentPage>

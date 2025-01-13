@@ -16,6 +16,13 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
             await Navigation.PopToRootAsync();
         }
 
+        private async void OnParcelListClicked(object sender, EventArgs e)
+        {
+            // Navigate to the ParcelListPage for the student
+            await Navigation.PushAsync(new ParcelListPage());
+        }
+
+
     }
 }
 

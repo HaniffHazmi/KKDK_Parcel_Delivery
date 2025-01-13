@@ -7,11 +7,14 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
     public partial class AddParcelPage : ContentPage
     {
         private readonly DatabaseService _databaseService;
+        private readonly string _studentMatricNum; // Matric number of the logged-in student
 
-        public AddParcelPage()
+        // Modify constructor to accept the matric number
+        public AddParcelPage(string studentMatricNum)
         {
             InitializeComponent();
             _databaseService = new DatabaseService();
+            _studentMatricNum = studentMatricNum; // Store the matric number
         }
 
         // Handle the parcel add button click
@@ -28,8 +31,17 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
                 return;
             }
 
-            var student = await _databaseService.GetStudentByMatricNumAsync("student_matric_number"); // Replace with logged-in student's matric number
+            // Fetch the student based on the matric number
+            var student = await _databaseService.GetStudentByMatricNumAsync(_studentMatricNum);
 
+            // Check if student exists
+            if (student == null)
+            {
+                await DisplayAlert("Error", "Student not found. Please try again.", "OK");
+                return;
+            }
+
+            // Create new parcel
             var newParcel = new Parcel
             {
                 TrackingNumber = trackingNumber,
@@ -39,6 +51,7 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
                 StudentId = student.StudentId
             };
 
+            // Insert parcel into database
             await _databaseService.InsertParcelAsync(newParcel);
             await DisplayAlert("Success", "Parcel added successfully", "OK");
 
