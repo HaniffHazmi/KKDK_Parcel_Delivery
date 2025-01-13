@@ -59,10 +59,22 @@ namespace KKDK_Parcel_Delivery.Services
             return await _database.Table<Parcel>().ToListAsync();
         }
 
+        // Get parcels for a specific student
+        public async Task<List<Parcel>> GetParcelsForStudentAsync(int studentId)
+        {
+            return await _database.Table<Parcel>().Where(p => p.StudentId == studentId).ToListAsync();
+        }
+
         // Get a specific Student by ID
         public async Task<Student> GetStudentByIdAsync(int studentId)
         {
             return await _database.Table<Student>().Where(s => s.StudentId == studentId).FirstOrDefaultAsync();
+        }
+
+        // Get a specific Student by Matric Number
+        public async Task<Student> GetStudentByMatricNumAsync(string matricNum)
+        {
+            return await _database.Table<Student>().Where(s => s.MatricNum == matricNum).FirstOrDefaultAsync();
         }
 
         // Update a Student's information
@@ -88,5 +100,13 @@ namespace KKDK_Parcel_Delivery.Services
         {
             return await _database.DeleteAsync(parcel);
         }
+
+        // Get a specific Parcel by ID
+        public async Task<Parcel> GetParcelByIdAsync(int parcelId)
+        {
+            return await _database.Table<Parcel>().Where(p => p.ParcelId == parcelId).FirstOrDefaultAsync();
+        }
+
+
     }
 }

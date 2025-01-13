@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KKDK_Parcel_Delivery.Pages.StudentPages.ParcelListPage"
+             Title="ParcelListPage">
+    <VerticalStackLayout Padding="20">
+        <!-- Parcel List -->
+        <ListView x:Name="ParcelListView" ItemTapped="OnParcelTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding TrackingNumber}" Detail="{Binding Courier}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Add Parcel Button -->
+        <Button Text="Add Parcel" Clicked="OnAddParcelClicked" />
+    </VerticalStackLayout>
+</ContentPage>

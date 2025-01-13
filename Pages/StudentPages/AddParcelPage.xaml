@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KKDK_Parcel_Delivery.Pages.StudentPages.AddParcelPage"
+             Title="AddParcelPage">
+    <VerticalStackLayout Padding="20">
+        <Entry x:Name="TrackingNumberEntry" Placeholder="Enter Tracking Number" />
+        <Picker x:Name="CourierPicker" Title="Select Courier">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>JNT</x:String>
+                    <x:String>SPX</x:String>
+                    <x:String>Flash</x:String>
+                    <x:String>Ninjavan</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Entry x:Name="ReceiverNameEntry" Placeholder="Enter Receiver Name" />
+        <DatePicker x:Name="DateArrivedPicker" />
+        <Button Text="Submit" Clicked="OnAddParcelClicked" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -10,6 +10,12 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
         {
             InitializeComponent();
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopToRootAsync();
+        }
+
     }
 }
 
