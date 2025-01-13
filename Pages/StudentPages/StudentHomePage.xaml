@@ -19,5 +19,12 @@
             VerticalOptions="Center"
             HorizontalOptions="Center"
             Clicked="OnParcelListClicked"/>
+
+        <!-- New button to navigate to the profile page -->
+        <Button
+            Text="Go to Profile"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Clicked="OnProfileClicked"/>
     </VerticalStackLayout>
 </ContentPage>

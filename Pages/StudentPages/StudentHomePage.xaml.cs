@@ -22,6 +22,11 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
             await Navigation.PushAsync(new ParcelListPage());
         }
 
+        private async void OnProfileClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StudentProfilePage()); // Navigate to the profile page
+        }
+
 
     }
 }
