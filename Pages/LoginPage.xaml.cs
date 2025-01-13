@@ -1,5 +1,8 @@
 using KKDK_Parcel_Delivery.Models;
 using KKDK_Parcel_Delivery.Services;
+using KKDK_Parcel_Delivery.Pages.StudentPages;  // For StudentHomePage
+using KKDK_Parcel_Delivery.Pages.AdminPages;    // For AdminHomePage
+
 
 namespace KKDK_Parcel_Delivery.Pages
 {

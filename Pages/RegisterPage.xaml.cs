@@ -1,13 +1,13 @@
 using KKDK_Parcel_Delivery.Models;
 using KKDK_Parcel_Delivery.Services;
 
-namespace KKDK_Parcel_Delivery.Views
+namespace KKDK_Parcel_Delivery.Pages
 {
-    public partial class RegistrationPage : ContentPage
+    public partial class RegisterPage : ContentPage
     {
         private readonly DatabaseService _databaseService;
 
-        public RegistrationPage()
+        public RegisterPage()
         {
             InitializeComponent();
             _databaseService = new DatabaseService();
@@ -15,13 +15,13 @@ namespace KKDK_Parcel_Delivery.Views
 
         private async void OnRegisterClicked(object sender, EventArgs e)
         {
-            string matricNum = MatricNumberEntry.Text;
+            string matricNum = MatricNumEntry.Text;
             string name = NameEntry.Text;
             string password = PasswordEntry.Text;
-            string phoneNum = PhoneNumberEntry.Text;
+            string phoneNum = PhoneNumEntry.Text;
             string college = CollegePicker.SelectedItem.ToString();
             string block = BlockPicker.SelectedItem.ToString();
-            string roomNo = RoomNumberEntry.Text;
+            string roomNo = RoomNoEntry.Text;
 
             if (string.IsNullOrEmpty(matricNum) || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(password) ||
                 string.IsNullOrEmpty(phoneNum) || string.IsNullOrEmpty(college) || string.IsNullOrEmpty(block) ||
