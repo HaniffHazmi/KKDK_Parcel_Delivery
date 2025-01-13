@@ -6,9 +6,32 @@
     <VerticalStackLayout>
         <!-- Student Info Fields -->
         <Entry x:Name="MatricNumberEntry" Placeholder="Matric Number" IsEnabled="False" />
-        <Entry x:Name="FullNameEntry" Placeholder="Full Name" />
-        <Entry x:Name="EmailEntry" Placeholder="Email" />
-        <Entry x:Name="PhoneNumberEntry" Placeholder="Phone Number" />
+        <Entry x:Name="FullNameEntry" Placeholder="Full Name" IsEnabled="False" />
+        <Entry x:Name="EmailEntry" Placeholder="Email" IsEnabled="False"/>
+        <Entry x:Name="PhoneNumberEntry" Placeholder="Phone Number" IsEnabled="False"/>
+
+        <!-- Additional Fields for Room Number, Block, and College -->
+        <Entry x:Name="RoomNumberEntry" Placeholder="Room Number" IsEnabled="False" />
+        <Picker x:Name="BlockPicker" Title="Select Block" IsEnabled="False">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>A</x:String>
+                    <x:String>B</x:String>
+                    <x:String>C</x:String>
+                    <x:String>D</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- College Picker -->
+        <Picker x:Name="CollegePicker" Title="Select College" IsEnabled="False">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>TDI</x:String>
+                    <x:String>TF</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
 
         <!-- Edit and Save Buttons -->
         <Button x:Name="EditButton" Text="Edit" Clicked="OnEditClicked"/>

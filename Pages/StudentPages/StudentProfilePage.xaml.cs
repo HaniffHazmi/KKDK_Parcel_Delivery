@@ -34,6 +34,9 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
                     FullNameEntry.Text = _student.StudentName;
                     EmailEntry.Text = _student.Email;
                     PhoneNumberEntry.Text = _student.PhoneNum;
+                    RoomNumberEntry.Text = _student.RoomNo;  // New field for Room Number
+                    BlockPicker.SelectedIndex = (int)_student.Block;           // New field for Block
+                    CollegePicker.SelectedIndex = (int)_student.College;      // New field for College
                 }
                 else
                 {
@@ -48,6 +51,10 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
             FullNameEntry.IsEnabled = true;
             EmailEntry.IsEnabled = true;
             PhoneNumberEntry.IsEnabled = true;
+            RoomNumberEntry.IsEnabled = true;  // Enable Room Number field for editing
+            BlockPicker.IsEnabled = true;       // Enable Block picker for editing
+            CollegePicker.IsEnabled = true;     // Enable College picker for editing
+
 
             // Show Save button, hide Edit button
             EditButton.IsVisible = false;
@@ -60,6 +67,9 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
             _student.StudentName = FullNameEntry.Text;
             _student.Email = EmailEntry.Text;
             _student.PhoneNum = PhoneNumberEntry.Text;
+            _student.RoomNo = RoomNumberEntry.Text;  // Save Room Number
+            _student.Block = (Block)BlockPicker.SelectedIndex;  // Save Block
+            _student.College = (College)CollegePicker.SelectedIndex;  // Save College
 
             await _databaseService.UpdateStudentAsync(_student);
 
@@ -69,6 +79,10 @@ namespace KKDK_Parcel_Delivery.Pages.StudentPages
             FullNameEntry.IsEnabled = false;
             EmailEntry.IsEnabled = false;
             PhoneNumberEntry.IsEnabled = false;
+            RoomNumberEntry.IsEnabled = false;  // Disable Room Number
+            BlockPicker.IsEnabled = false;      // Disable Block picker
+            CollegePicker.IsEnabled = false;    // Disable College picker
+
 
             EditButton.IsVisible = true;
             SaveButton.IsVisible = false;
