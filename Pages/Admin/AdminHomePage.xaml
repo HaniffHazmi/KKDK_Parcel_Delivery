@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KKDK_Parcel_Delivery.Pages.Admin.AdminHomePage"
+             Title="AdminHomePage">
+    <VerticalStackLayout>
+        <!-- Welcome Message -->
+        <Label Text="Welcome, Admin!" FontSize="24" HorizontalOptions="Center" />
+
+        <!-- View All Parcels Button -->
+        <Button Text="View All Parcels" Clicked="OnViewAllParcelsClicked"/>
+
+        <!-- Manage Admins Button -->
+        <Button Text="Manage Admins" Clicked="OnManageAdminsClicked"/>
+
+        <!-- Logout Button -->
+        <Button Text="Logout" Clicked="OnLogoutClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

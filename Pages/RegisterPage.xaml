@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KKDK_Parcel_Delivery.Pages.RegisterPage"
+             Title="Register">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="Register" FontSize="Large" HorizontalOptions="Center" />
+
+        <Entry x:Name="NameEntry" Placeholder="Enter your Name" />
+        <Entry x:Name="MatricNumEntry" Placeholder="Enter your Matric Number" />
+        <Entry x:Name="PasswordEntry" Placeholder="Enter your Password" IsPassword="True" />
+        <Entry x:Name="PhoneNumEntry" Placeholder="Enter your Phone Number" Keyboard="Telephone" />
+
+        <Picker x:Name="BlockPicker" Title="Select Block">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>A</x:String>
+                    <x:String>B</x:String>
+                    <x:String>C</x:String>
+                    <x:String>D</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Picker x:Name="CollegePicker" Title="Select College">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>TDI</x:String>
+                    <x:String>TF</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Entry x:Name="RoomNoEntry" Placeholder="Enter your Room Number (e.g., 100)" />
+
+        <Button Text="Register" Clicked="OnRegisterClicked" />
+    </VerticalStackLayout>
+</ContentPage>
