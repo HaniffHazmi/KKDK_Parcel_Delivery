@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KKDK_Parcel_Delivery.Pages.AdminPages.AdminHomePage"
              Title="AdminHomePage">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="10" Spacing="10">
         <!-- Welcome Message -->
         <Label Text="Welcome, Admin!" FontSize="24" HorizontalOptions="Center" />
 
@@ -11,6 +11,11 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" 
                 Clicked="OnParcelListClicked"/>
+
+        <Button Text="Admin List"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="OnAdminListClicked"/>
 
         <!-- Logout Button -->
         <Button 

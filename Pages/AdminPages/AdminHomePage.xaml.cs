@@ -24,4 +24,10 @@ public partial class AdminHomePage : ContentPage
     {
         await Navigation.PushAsync(new AdminParcelListPage());
     }
+
+    private async void OnAdminListClicked(object sender, EventArgs e)
+    {
+        // Navigate to the AdminListPage
+        await Navigation.PushAsync(new AdminListPage());
+    }
 }

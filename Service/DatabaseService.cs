@@ -35,6 +35,26 @@ namespace KKDK_Parcel_Delivery.Services
             return await _database.InsertAsync(admin);
         }
 
+        public async Task<int> DeleteAdminAsync(Admin admin)
+        {
+            if (admin != null)
+            {
+                // Perform the delete operation
+                return await _database.DeleteAsync(admin);
+            }
+            return 0;
+        }
+
+        public async Task<int> UpdateAdminAsync(Admin admin)
+        {
+            if (admin != null)
+            {
+                // Perform the update operation
+                return await _database.UpdateAsync(admin);
+            }
+            return 0;
+        }
+
         // Insert a new Parcel
         public async Task<int> InsertParcelAsync(Parcel parcel)
         {

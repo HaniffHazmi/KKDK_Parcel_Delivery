@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KKDK_Parcel_Delivery.Pages.AdminPages.AdminListPage"
+             Title="AdminListPage">
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <!-- List of Admins -->
+        <CollectionView x:Name="AdminCollectionView"
+                            SelectionMode="Single"
+                            SelectedItem="{Binding SelectedAdmin}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="{Binding AdminName}" FontAttributes="Bold" />
+                        <Label Text="{Binding MatricNum}" Margin="10,0,0,0"/>
+                        <Button Text="Edit" Clicked="EditAdmin_Clicked" CommandParameter="{Binding .}" />
+                        <Button Text="Delete" Clicked="DeleteAdmin_Clicked" CommandParameter="{Binding .}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Form for adding/editing admin -->
+        <Border BackgroundColor="LightGray" 
+                Padding="10" 
+                x:Name="FormBorder" 
+                IsVisible="False">
+            <StackLayout>
+                <Entry x:Name="AdminNameEntry" Placeholder="Admin Name" />
+                <Entry x:Name="MatricNumEntry" Placeholder="Matric Number" />
+                <Entry x:Name="PhoneNumEntry" Placeholder="Phone Number" />
+                <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
+
+                <Button x:Name="SaveAdminButton" Text="Save Admin" Clicked="SaveAdmin_Clicked" />
+                <Button Text="Cancel" Clicked="Cancel_Clicked" />
+            </StackLayout>
+        </Border>
+
+        <!-- Button to add new admin -->
+        <Button x:Name="AddNewAdminButton" 
+                Text="Add New Admin" 
+                Clicked="ShowAddAdminForm_Clicked" />
+    </VerticalStackLayout>
+</ContentPage>
