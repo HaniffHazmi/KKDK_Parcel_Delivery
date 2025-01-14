@@ -4,7 +4,7 @@
              x:Class="KKDK_Parcel_Delivery.Pages.LoginPage"
              Title="Login">
 
-    <VerticalStackLayout Padding="20">
+    <VerticalStackLayout Padding="20" Spacing="10">
         <Label Text="Login" FontSize="Large" HorizontalOptions="Center" />
 
         <Entry x:Name="MatricNumberEntry" Placeholder="Enter your Matric Number" Keyboard="Text" />

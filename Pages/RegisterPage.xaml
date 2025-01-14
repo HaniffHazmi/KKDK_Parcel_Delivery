@@ -4,7 +4,7 @@
              x:Class="KKDK_Parcel_Delivery.Pages.RegisterPage"
              Title="Register">
 
-    <VerticalStackLayout Padding="20">
+    <VerticalStackLayout Padding="20" Spacing="10">
         <Label Text="Register" FontSize="Large" HorizontalOptions="Center" />
 
         <Entry x:Name="NameEntry" Placeholder="Enter your Name" />

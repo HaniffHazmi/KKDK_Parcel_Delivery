@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KKDK_Parcel_Delivery.Pages.StudentPages.ParcelDetailPage"
              Title="ParcelDetailPage">
-    <VerticalStackLayout Padding="20">
+    <VerticalStackLayout Padding="20" Spacing="10">
         <!-- Parcel ID -->
         <Label Text="Parcel ID:" FontAttributes="Bold" />
         <Label x:Name="ParcelIdLabel" />

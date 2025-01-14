@@ -4,14 +4,14 @@
              x:Class="KKDK_Parcel_Delivery.Pages.AdminPages.AdminParcelListPage"
              xmlns:pages="clr-namespace:KKDK_Parcel_Delivery.Pages.AdminPages"
              Title="AdminParcelListPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="10" Spacing="10">
         <Label Text="Parcels" FontSize="Large" FontAttributes="Bold" />
         <CollectionView 
             ItemsSource="{Binding Parcels}" 
             SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Orientation="Vertical" Padding="5">
+                    <StackLayout Orientation="Vertical" Padding="5" Spacing="10">
                         <Label Text="{Binding TrackingNumber}" FontSize="Medium"/>
                         <Label Text="{Binding ReceiverName}" FontSize="Small"/>
                         <Label Text="{Binding ParcelStatus}" FontSize="Small" TextColor="Gray"/>

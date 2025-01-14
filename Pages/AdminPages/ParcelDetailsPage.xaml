@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KKDK_Parcel_Delivery.Pages.AdminPages.ParcelDetailsPage"
              Title="ParcelDetailsPage">
-    <VerticalStackLayout Padding="10">
+    <VerticalStackLayout Padding="10" Spacing="10">
         <Label Text="Parcel Details" FontSize="Large" FontAttributes="Bold" />
 
         <Label Text="Tracking Number:" FontSize="Medium" />
