@@ -3,42 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KKDK_Parcel_Delivery.Pages.AdminPages.AdminListPage"
              Title="AdminListPage">
-    <VerticalStackLayout Padding="10" Spacing="10">
+    <VerticalStackLayout Padding="10" Spacing="10" >
         <!-- List of Admins -->
         <CollectionView x:Name="AdminCollectionView"
                             SelectionMode="Single"
                             SelectedItem="{Binding SelectedAdmin}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Orientation="Horizontal" Padding="5">
-                        <Label Text="{Binding AdminName}" FontAttributes="Bold" />
-                        <Label Text="{Binding MatricNum}" Margin="10,0,0,0"/>
-                        <Button Text="Edit" Clicked="EditAdmin_Clicked" CommandParameter="{Binding .}" />
-                        <Button Text="Delete" Clicked="DeleteAdmin_Clicked" CommandParameter="{Binding .}" />
-                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="5" Spacing="10">
+                        <Label Text="{Binding AdminName}" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding MatricNum}" FontSize="Small"/>
+                        <Label Text="{Binding PhoneNum}" FontSize="Small"/>
+                        <Label Text="{Binding Password}"/>
+                        <HorizontalStackLayout Spacing="20">
+                            <Button Text="Edit" Clicked="EditAdmin_Clicked" CommandParameter="{Binding .}" Background="Green" TextColor="White" FontAttributes="Bold"/>
+                            <Button Text="Delete" Clicked="DeleteAdmin_Clicked" CommandParameter="{Binding .}" Background="Red" TextColor="White" FontAttributes="Bold" />
+                        </HorizontalStackLayout>
+                        </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
         <!-- Form for adding/editing admin -->
-        <Border BackgroundColor="LightGray" 
+        <Border BackgroundColor="White"
                 Padding="10" 
                 x:Name="FormBorder" 
                 IsVisible="False">
-            <StackLayout>
-                <Entry x:Name="AdminNameEntry" Placeholder="Admin Name" />
-                <Entry x:Name="MatricNumEntry" Placeholder="Matric Number" />
-                <Entry x:Name="PhoneNumEntry" Placeholder="Phone Number" />
-                <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
+            <StackLayout Spacing="20" >
+                <Entry x:Name="AdminNameEntry" Placeholder="Admin Name" TextColor="Black" FontAttributes="Bold"/>
+                <Entry x:Name="MatricNumEntry" Placeholder="Matric Number" TextColor="Black" FontAttributes="Bold"/>
+                <Entry x:Name="PhoneNumEntry" Placeholder="Phone Number" TextColor="Black" FontAttributes="Bold"/>
+                <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="False" TextColor="Black" FontAttributes="Bold"/>
 
-                <Button x:Name="SaveAdminButton" Text="Save Admin" Clicked="SaveAdmin_Clicked" />
-                <Button Text="Cancel" Clicked="Cancel_Clicked" />
+                <Button x:Name="SaveAdminButton" Text="Save Admin" Clicked="SaveAdmin_Clicked" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"/>
+                <Button Text="Cancel" Clicked="Cancel_Clicked" BackgroundColor="Blue" TextColor="White" FontAttributes="Bold"/>
             </StackLayout>
         </Border>
 
         <!-- Button to add new admin -->
         <Button x:Name="AddNewAdminButton" 
                 Text="Add New Admin" 
-                Clicked="ShowAddAdminForm_Clicked" />
+                Clicked="ShowAddAdminForm_Clicked" 
+                Background="AliceBlue" FontAttributes="Bold"/>
     </VerticalStackLayout>
 </ContentPage>

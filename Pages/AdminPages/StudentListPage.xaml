@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KKDK_Parcel_Delivery.Pages.AdminPages.StudentListPage"
+             Title="Student List">
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <!-- List of Students -->
+        <CollectionView x:Name="StudentCollectionView"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedStudent}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Vertical" Padding="5" Spacing="10">
+                        <Label Text="{Binding StudentName}" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding MatricNum}" FontSize="Small"/>
+                        <Label Text="{Binding Email}" FontSize="Small"/>
+                        <Label Text="{Binding PhoneNum}" FontSize="Small"/>
+                        <Label Text="{Binding Block}" FontSize="Small"/>
+                        <Label Text="{Binding College}" FontSize="Small"/>
+                        <Label Text="{Binding RoomNo}" FontSize="Small"/>
+                        <HorizontalStackLayout Spacing="20">
+                            <Button Text="Edit" Clicked="EditStudent_Clicked" CommandParameter="{Binding .}" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"/>
+                            <Button Text="Delete" Clicked="DeleteStudent_Clicked" CommandParameter="{Binding .}" BackgroundColor="Red" TextColor="White" FontAttributes="Bold" />
+                        </HorizontalStackLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Form for adding/editing student -->
+        <Border BackgroundColor="Gray"
+                Padding="10" 
+                x:Name="FormBorder" 
+                IsVisible="False">
+            <StackLayout Spacing="10" Padding="10">
+                <Entry x:Name="StudentNameEntry" Placeholder="Student Name" TextColor="Black" FontAttributes="Bold"/>
+                <Entry x:Name="MatricNumEntry" Placeholder="Matric Number" TextColor="Black" FontAttributes="Bold"/>
+                <Entry x:Name="EmailEntry" Placeholder="Email" TextColor="Black" FontAttributes="Bold"/>
+                <Entry x:Name="PhoneNumEntry" Placeholder="Phone Number" TextColor="Black" FontAttributes="Bold"/>
+                <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" TextColor="Black" FontAttributes="Bold" />
+                <Picker x:Name="BlockPicker" Title="Select Block" ItemsSource="{Binding Blocks}" SelectedItem="{Binding SelectedBlock}"/>
+                <Picker x:Name="CollegePicker" Title="Select College" ItemsSource="{Binding Colleges}" SelectedItem="{Binding SelectedCollege}"/>
+                <Entry x:Name="RoomNoEntry" Placeholder="Room Number" TextColor="Black" FontAttributes="Bold"/>
+
+                <Button x:Name="SaveStudentButton" Text="Save Student" Clicked="SaveStudent_Clicked" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"/>
+                <Button Text="Cancel" Clicked="Cancel_Clicked" BackgroundColor="Blue" TextColor="White" FontAttributes="Bold"/>
+            </StackLayout>
+        </Border>
+
+        <!-- Button to add new student -->
+        
+    </VerticalStackLayout>
+</ContentPage>

@@ -14,4 +14,8 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" />     
+    </Shell.BackButtonBehavior>
+
 </Shell>

@@ -5,16 +5,22 @@
              Title="ParcelListPage">
     <VerticalStackLayout Padding="20" Spacing="10">
         <!-- Parcel List -->
-        <ListView 
+        
+            <ListView 
             x:Name="ParcelListView" 
             ItemTapped="OnParcelTapped">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding TrackingNumber}" Detail="{Binding Courier}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
 
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                    <VerticalStackLayout Padding="10" Spacing="10">
+
+                        <Label Text="{Binding TrackingNumber}"/>
+                        <Label Text="{Binding Courier}"/>
+                    </VerticalStackLayout>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        
         <!-- Add Parcel Button -->
         <Button Text="Add Parcel" Clicked="OnAddParcelClicked" />
     </VerticalStackLayout>

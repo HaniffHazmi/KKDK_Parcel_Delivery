@@ -28,7 +28,7 @@ namespace KKDK_Parcel_Delivery.Models
         private DateTime _dateArrived;
         private ParcelStatus _parcelStatus;
         private string _receiverName;
-        private int _studentId;  // Foreign key to link with Student
+        private int _studentId;  
 
         [PrimaryKey, AutoIncrement]
         public int ParcelId

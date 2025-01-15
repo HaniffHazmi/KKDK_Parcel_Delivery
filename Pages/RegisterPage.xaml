@@ -9,7 +9,7 @@
 
         <Entry x:Name="NameEntry" Placeholder="Enter your Name" />
         <Entry x:Name="MatricNumEntry" Placeholder="Enter your Matric Number" />
-        <Entry x:Name="PasswordEntry" Placeholder="Enter your Password" IsPassword="True" />
+        <Entry x:Name="PasswordEntry" Placeholder="Enter your Password" IsPassword="False" />
         <Entry x:Name="PhoneNumEntry" Placeholder="Enter your Phone Number" Keyboard="Telephone" />
 
         <Picker x:Name="BlockPicker" Title="Select Block">

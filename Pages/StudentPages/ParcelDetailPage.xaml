@@ -5,28 +5,28 @@
              Title="ParcelDetailPage">
     <VerticalStackLayout Padding="20" Spacing="10">
         <!-- Parcel ID -->
-        <Label Text="Parcel ID:" FontAttributes="Bold" />
-        <Label x:Name="ParcelIdLabel" />
+        <Label Text="Parcel ID:" FontAttributes="Bold" FontSize="Medium"/>
+        <Label x:Name="ParcelIdLabel" FontSize="Small"/>
 
         <!-- Tracking Number -->
-        <Label Text="Tracking Number:" FontAttributes="Bold" />
-        <Label x:Name="TrackingNumberLabel" />
+        <Label Text="Tracking Number:" FontAttributes="Bold" FontSize="Medium" />
+        <Label x:Name="TrackingNumberLabel" FontSize="Small"/>
 
         <!-- Courier -->
-        <Label Text="Courier:" FontAttributes="Bold" />
-        <Label x:Name="CourierLabel" />
+        <Label Text="Courier:" FontAttributes="Bold" FontSize="Medium"/>
+        <Label x:Name="CourierLabel" FontSize="Small"/>
 
         <!-- Date Arrived -->
-        <Label Text="Date Arrived:" FontAttributes="Bold" />
-        <Label x:Name="DateArrivedLabel" />
+        <Label Text="Date Arrived:" FontAttributes="Bold" FontSize="Medium"/>
+        <Label x:Name="DateArrivedLabel" FontSize="Small"/>
 
         <!-- Status -->
-        <Label Text="Status:" FontAttributes="Bold" />
-        <Label x:Name="ParcelStatusLabel" />
+        <Label Text="Status:" FontAttributes="Bold" FontSize="Medium"/>
+        <Label x:Name="ParcelStatusLabel" FontSize="Small"/>
 
         <!-- Receiver's Name -->
-        <Label Text="Receiver's Name:" FontAttributes="Bold" />
-        <Label x:Name="ReceiverNameLabel" />
+        <Label Text="Receiver's Name:" FontAttributes="Bold" FontSize="Medium"/>
+        <Label x:Name="ReceiverNameLabel" FontSize="Small"/>
 
         <!-- Back Button -->
         <Button Text="Back" Clicked="OnBackClicked" />

@@ -18,6 +18,11 @@
                 Clicked="OnAdminListClicked"/>
 
         <!-- Logout Button -->
+        
+        <Button Text="Student List"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="OnStudentListClicked"/>
         <Button 
             Text="Logout" 
             Clicked="OnLogoutClicked"

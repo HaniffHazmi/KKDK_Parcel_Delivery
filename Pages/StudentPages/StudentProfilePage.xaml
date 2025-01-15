@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KKDK_Parcel_Delivery.Pages.StudentPages.StudentProfilePage"
              Title="StudentProfilePage">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="10" Spacing="10">
         <!-- Student Info Fields -->
         <Entry x:Name="MatricNumberEntry" Placeholder="Matric Number" IsEnabled="False" />
         <Entry x:Name="FullNameEntry" Placeholder="Full Name" IsEnabled="False" />
@@ -12,7 +12,7 @@
 
         <!-- Additional Fields for Room Number, Block, and College -->
         <Entry x:Name="RoomNumberEntry" Placeholder="Room Number" IsEnabled="False" />
-        <Picker x:Name="BlockPicker" Title="Select Block" IsEnabled="False">
+        <Picker x:Name="BlockPicker" Title="Select Block" IsEnabled="False" TitleColor="Black">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>A</x:String>
@@ -24,7 +24,7 @@
         </Picker>
 
         <!-- College Picker -->
-        <Picker x:Name="CollegePicker" Title="Select College" IsEnabled="False">
+        <Picker x:Name="CollegePicker" Title="Select College" IsEnabled="False" TitleColor="Black">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>TDI</x:String>

@@ -6,30 +6,41 @@
     <VerticalStackLayout Padding="10" Spacing="10">
         <Label Text="Parcel Details" FontSize="Large" FontAttributes="Bold" />
 
-        <Label Text="Tracking Number:" FontSize="Medium" />
-        <Label Text="{Binding Parcel.TrackingNumber}" FontSize="Medium" />
+        <HorizontalStackLayout Spacing="10" Padding="10">
+        <Label Text="Tracking Number:" FontSize="Medium" FontAttributes="Bold" />
+        <Label Text="{Binding Parcel.TrackingNumber}" FontSize="Small" />
+        </HorizontalStackLayout>
 
-        <Label Text="Courier:" FontSize="Medium" />
-        <Label Text="{Binding Parcel.Courier}" FontSize="Medium" />
+        <HorizontalStackLayout Spacing="10" Padding="10">
+            <Label Text="Courier:" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="{Binding Parcel.Courier}" FontSize="Small" />
+        </HorizontalStackLayout>
 
-        <Label Text="Receiver:" FontSize="Medium" />
-        <Label Text="{Binding Parcel.ReceiverName}" FontSize="Medium" />
+        <HorizontalStackLayout Spacing="10" Padding="10">
+            <Label Text="Receiver:" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="{Binding Parcel.ReceiverName}" FontSize="Small" />
+        </HorizontalStackLayout>
 
-        <Label Text="Status:" FontSize="Medium" />
+        
         
         <!-- Picker is enabled only in edit mode -->
-        <Picker x:Name="StatusPicker" 
+        <HorizontalStackLayout Spacing="10" Padding="10">
+            <Label Text="Status:" FontSize="Medium" />
+            <Picker x:Name="StatusPicker" 
                 Title="Select Status" 
                 ItemsSource="{Binding ParcelStatusList}" 
                 SelectedItem="{Binding Parcel.ParcelStatus}"
                 IsEnabled="{Binding IsEditing}" />
-
+        </HorizontalStackLayout>
+        
         <Button Text="Edit"
                 IsVisible="{Binding IsEditing, Converter={StaticResource InverseBoolConverter}}"
-                Command="{Binding EditCommand}" />
+                Command="{Binding EditCommand}" 
+                Background="LightSkyBlue"/>
 
         <Button Text="Save"
                 IsVisible="{Binding IsEditing}"
-                Command="{Binding SaveCommand}" />
+                Command="{Binding SaveCommand}"
+                BackgroundColor="LightGreen"/>
     </VerticalStackLayout>
 </ContentPage>

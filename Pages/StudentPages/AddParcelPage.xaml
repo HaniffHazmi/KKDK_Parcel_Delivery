@@ -5,10 +5,10 @@
              Title="AddParcelPage">
     <VerticalStackLayout Padding="20" Spacing="10">
         <Entry x:Name="TrackingNumberEntry" Placeholder="Enter Tracking Number" />
-        <Picker x:Name="CourierPicker" Title="Select Courier">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>JNT</x:String>
+        <Picker x:Name="CourierPicker" Title="Select Courier" TitleColor="Black">
+            <Picker.ItemsSource >
+                <x:Array Type="{x:Type x:String}" >
+                    <x:String>JNT</x:String >
                     <x:String>SPX</x:String>
                     <x:String>Flash</x:String>
                     <x:String>Ninjavan</x:String>
